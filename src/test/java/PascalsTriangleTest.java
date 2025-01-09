@@ -14,12 +14,27 @@ public class PascalsTriangleTest {
     }
 
     @Test
-    public void testFirstRowReturns() {
+    public void testRow0Returns() {
         assertEquals(asList(1), pascalsTriangle.triangleRow(0));
     }
 
     @Test
-    public void testFifthRowReturns() {
+    public void testRow1Returns() {
+        assertEquals(asList(1, 1), pascalsTriangle.triangleRow(1));
+    }
+
+    @Test
+    public void testRow2Returns() {
+        assertEquals(asList(1, 2, 1), pascalsTriangle.triangleRow(2));
+    }
+
+    @Test
+    public void testRow3Returns() {
+        assertEquals(asList(1, 3, 3, 1), pascalsTriangle.triangleRow(3));
+    }
+
+    @Test
+    public void testRow4Returns() {
         assertEquals(asList(1, 4, 6, 4, 1), pascalsTriangle.triangleRow(4));
     }
 

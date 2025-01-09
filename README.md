@@ -2,7 +2,7 @@
 
 Welcome to the Pascal's Triangle assignment. We hope you'll have fun!
 
-## How to create Pascal's Triangle
+## Pascal's Triangle explanation
 
 Pascal's Triangle is an infinite list of growing lists of numbers.
 
@@ -26,8 +26,8 @@ Each row is constructed as follows:
 
 The objectives for this assignment is:
 
-- Create a function `triangleRow` that takes a number and returns a list of numbers containing the values of Pascal’s triangle **for that row**.
-- Run the test suite and make sure that all tests pass.
+- Find the bug in the `triangleRow` function. Look at the result of the test as a hint.
+- Remove the bug and make sure the tests pass.
 
 ### Running the tests
 
@@ -42,13 +42,6 @@ or
 ```sh
 $ gradlew.bat test
 ```
-
-### Evaluation Criteria
-
-- Java best practices
-- Completeness: did you complete the features? Are all the tests running?
-- Correctness: does the functionality act in sensible, thought-out ways?
-- Maintainability: is it written in a clean, maintainable way?
 
 ### Good luck!
 
