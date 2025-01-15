@@ -37,5 +37,4 @@ public class PascalsTriangleTest {
     public void testRow4Returns() {
         assertEquals(asList(1, 4, 6, 4, 1), pascalsTriangle.triangleRow(4));
     }
-
 }

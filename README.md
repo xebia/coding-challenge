@@ -43,6 +43,12 @@ or
 $ gradlew.bat test
 ```
 
+or
+
+```sh
+$ mvn test
+```
+
 ### Good luck!
 
 All the best and happy coding,
