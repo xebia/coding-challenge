@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_NAME="$(basename "$0")"
+REPO_ROOT="$(git -C "$(dirname "$0")" rev-parse --show-toplevel)"
+PARENT_DIR="$(dirname "$REPO_ROOT")"
+REPO_NAME="$(basename "$REPO_ROOT")"
+
+read -rp "Candidate name: " CANDIDATE_NAME
+if [[ -z "$CANDIDATE_NAME" ]]; then
+    echo "Candidate name cannot be empty." >&2
+    exit 1
+fi
+
+SLUG="$(echo "$CANDIDATE_NAME" | tr '[:upper:]' '[:lower:]' | tr -cs 'a-z0-9' '-' | sed 's/^-*//;s/-*$//')"
+DEST="$PARENT_DIR/${REPO_NAME}-${SLUG}"
+
+if [[ -e "$DEST" ]]; then
+    echo "Destination already exists: $DEST" >&2
+    exit 1
+fi
+
+echo "Copying challenge to $DEST ..."
+mkdir -p "$DEST"
+rsync -a \
+    --exclude='.git' \
+    --exclude='.gradle' \
+    --exclude='build' \
+    --exclude='target' \
+    --exclude="$SCRIPT_NAME" \
+    --exclude='SOLUTIONS.md' \
+    "$REPO_ROOT/" "$DEST/"
+
+cd "$DEST"
+git init -q
+git add -A
+git commit -q -m "Initial commit"
+
+echo "Done. Challenge set up for '$CANDIDATE_NAME' at: $DEST"
