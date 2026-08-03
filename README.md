@@ -24,10 +24,12 @@ Each row is constructed as follows:
 
 ## Objective
 
+The `triangleRow` function is not implemented yet.
+
 The objectives for this assignment is:
 
-- Find the bug in the `triangleRow` function. Look at the result of the test as a hint.
-- Remove the bug and make sure the tests pass.
+- Implement the `triangleRow` function so it returns the correct row of Pascal's Triangle for a given index `n`.
+- Make sure the tests pass.
 
 ### Running the tests
 
